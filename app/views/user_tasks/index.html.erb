@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-sm-3">
 
-    <%= link_to new_user_task_path, remote: true do %>
+    <%= link_to new_user_task_path, remote: true, id: "toggle-button" do %>
       <button class="btn btn-success add-task"><%= fa_icon "plus" %> Add task</button>
     <% end %>
 
