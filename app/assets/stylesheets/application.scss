@@ -12,4 +12,13 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap-datepicker3
  */
+
+#task-form {
+  display: none;
+}
+
+.add-task {
+  margin-top: 20px;
+}

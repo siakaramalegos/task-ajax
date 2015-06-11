@@ -1,0 +1,6 @@
+<div class="well">
+  <%= user_task.description %>
+  <%= link_to "Edit", edit_user_task_path(user_task), remote: true %>
+  <%= link_to "Delete", user_task, remote: true, method: :delete, data: { confirm: 'Are you sure?'} %>
+  <span class="pull-right"><%= user_task.due %></span>
+</div>
