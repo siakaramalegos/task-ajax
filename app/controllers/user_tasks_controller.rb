@@ -16,15 +16,11 @@ class UserTasksController < ApplicationController
   # PATCH/PUT /user_tasks/1
   # PATCH/PUT /user_tasks/1.json
   def update
-    respond_to do |format|
-      if @user_task.update(user_task_params)
-        format.html { redirect_to @user_task, notice: 'User task was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user_task }
-      else
-        format.html { render :edit }
-        format.json { render json: @user_task.errors, status: :unprocessable_entity }
-      end
-    end
+    @user_task.update(user_task_params)
+  end
+
+  def destroy
+    @user_task.destroy
   end
 
   private
