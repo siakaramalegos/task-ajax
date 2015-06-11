@@ -2,7 +2,7 @@
   <div class="col-sm-3">
 
     <%= link_to new_user_task_path, remote: true do %>
-      <button class="btn btn-success add-task">Add task</button>
+      <button class="btn btn-success add-task"><%= fa_icon "plus" %> Add task</button>
     <% end %>
 
     <div id="task-form"></div>

@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require bootstrap-datepicker3
+ *= require font-awesome
  */
 
 #task-form {
@@ -21,4 +22,12 @@
 
 .add-task {
   margin-top: 20px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.well .task a:hover {
+  text-decoration: line-through;
 }
