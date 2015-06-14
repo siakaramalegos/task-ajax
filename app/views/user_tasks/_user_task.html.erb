@@ -1,11 +1,11 @@
 <div class="well">
-  <span class="task">
-    <%= link_to user_task.description, user_task, remote: true, method: :delete, data: { confirm: 'Are you sure?'} %>
-  </span>
+  <span class="pull-right"><%= user_task.due.stamp('Mon, June 1, 2015') %></span>
+    <span class="task">
+      <%= link_to user_task.description, user_task, remote: true, method: :delete, data: { confirm: 'Are you sure?'} %>
+    </span>
 
-  <%= link_to edit_user_task_path(user_task), remote: true do %>
-    <%= fa_icon "pencil" %>
+    <%= link_to edit_user_task_path(user_task), remote: true do %>
+      <%= fa_icon "pencil" %>
   <% end %>
 
-  <span class="pull-right"><%= user_task.due.stamp('Mon, June 1, 2015') %></span>
 </div>

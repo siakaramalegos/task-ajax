@@ -26,6 +26,7 @@ class UserTasksController < ApplicationController
   private
     def all_tasks
       @user_tasks = UserTask.order('due')
+      # @user_tasks_by_date = UserTask.group('due')
     end
 
     # Use callbacks to share common setup or constraints between actions.
