@@ -41,18 +41,22 @@
         <li><%= link_to "User Tasks", user_tasks_url %></li>
         <li><a href="#">About</a></li>
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+          <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+          <li>
+            <%= image_tag current_user.small_image, class: "user-thumb" %>
+          </li>
+        <% else %>
+          <li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></li>
+        <% end %>
+      </ul>
     </div><!-- /.navbar-collapse -->
   </nav>
 
   <!-- TODO:  move to navbar -->
   <div id="user-widget">
-    <% if current_user %>
-      Welcome, <strong><%= current_user.name %></strong><br>
-      <%= image_tag(current_user.normal_image) %><br>
-      <%= link_to "Sign out", signout_path, id: "sign_out" %>
-    <% else %>
-      <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-    <% end %>
+
   </div>
 
   <div class="container">
