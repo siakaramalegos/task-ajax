@@ -44,6 +44,17 @@
     </div><!-- /.navbar-collapse -->
   </nav>
 
+  <!-- TODO:  move to navbar -->
+  <div id="user-widget">
+    <% if current_user %>
+      Welcome, <strong><%= current_user.name %></strong><br>
+      <%= image_tag(current_user.normal_image) %><br>
+      <%= link_to "Sign out", signout_path, id: "sign_out" %>
+    <% else %>
+      <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+    <% end %>
+  </div>
+
   <div class="container">
     <% if notice.present? %>
       <div class="alert alert-dismissable alert-success">
