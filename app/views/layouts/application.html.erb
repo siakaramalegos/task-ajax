@@ -6,6 +6,7 @@
 
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.2/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Economica:400,700' rel='stylesheet' type='text/css'>
 
   <style>
     /* Only necessary if you are using navbar-fixed-top */
@@ -32,7 +33,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to 'Task Me', root_url, :class => "navbar-brand" %>
+      <%= link_to root_url, :class => "navbar-brand" do %>
+        <%= fa_icon 'pencil' %>
+      <% end %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
