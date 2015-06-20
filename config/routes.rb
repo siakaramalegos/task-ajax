@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'pages/index'
   get 'pages/about'
 
+  get '/signin' => 'sessions#new', :as => :signin
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signout' => 'sessions#destroy', :as => :signout
 

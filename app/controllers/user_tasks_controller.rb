@@ -1,4 +1,5 @@
 class UserTasksController < ApplicationController
+  before_action :authenticate!
   before_action :all_tasks, only: [:index, :create, :update, :destroy]
   before_action :set_user_task, only: [:show, :edit, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_task
@@ -54,6 +55,10 @@ class UserTasksController < ApplicationController
   end
 
   private
+    def authenticate!
+      redirect_to :signin unless current_user
+    end
+
     def all_tasks
       @user_tasks = UserTask.where(user_id: current_user.id).order('due')
       # @user_tasks_by_date = UserTask.group('due')
