@@ -5,45 +5,45 @@ class UserTasksControllerTest < ActionController::TestCase
     @user_task = user_tasks(:one)
   end
 
-  test "should get index" do
+  # test "should get index" do
+  #   signin User.first
+  #   get :index
+  #   assert_response :success
+  #   assert_not_nil assigns(:user_tasks)
+  # end
+
+  test "should not get index without sign in" do
     get :index
-    assert_response :success
-    assert_not_nil assigns(:user_tasks)
+    assert_response :redirect # 302
   end
 
-  test "should get new" do
+  test "should not get new without sign in" do
     get :new
-    assert_response :success
+    assert_response :redirect
   end
 
-  test "should create user_task" do
-    assert_difference('UserTask.count') do
-      post :create, user_task: { description: @user_task.description, due: @user_task.due }
-    end
-
-    assert_redirected_to user_task_path(assigns(:user_task))
+  test "should not create user_task without sign in" do
+    post :create, user_task: { description: @user_task.description, due: @user_task.due }
+    assert_response :redirect
   end
 
-  test "should show user_task" do
+  test "should not show user_task without sign in" do
     get :show, id: @user_task
-    assert_response :success
+    assert_response :redirect
   end
 
-  test "should get edit" do
+  test "should not get edit without sign in" do
     get :edit, id: @user_task
-    assert_response :success
+    assert_response :redirect
   end
 
-  test "should update user_task" do
+  test "should not update user_task without sign in" do
     patch :update, id: @user_task, user_task: { description: @user_task.description, due: @user_task.due }
-    assert_redirected_to user_task_path(assigns(:user_task))
+    assert_response :redirect
   end
 
-  test "should destroy user_task" do
-    assert_difference('UserTask.count', -1) do
-      delete :destroy, id: @user_task
-    end
-
-    assert_redirected_to user_tasks_path
+  test "should no destroy user_task without sign in" do
+    delete :destroy, id: @user_task
+    assert_response :redirect
   end
 end
