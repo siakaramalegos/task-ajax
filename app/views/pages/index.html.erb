@@ -2,5 +2,24 @@
 <div class="jumbotron text-center">
   <h1><%= fa_icon 'pencil' %>Task Me</h1>
   <p>Your cloud-based task management system</p>
-  <p><a class="btn btn-primary btn-lg" href="#" role="button">Get started</a></p>
+  <p><%= link_to "Get started", user_tasks_url, class: "btn btn-primary btn-lg" %></p>
+</div>
+<div class="container">
+  <div class="row" id="about">
+    <div class="col-sm-12">
+      <h2>About</h2>
+      <p>This app was created by Sia Karamalegos as a practice Rails 4 project for students to learn two concepts:</p>
+      <ul>
+        <li>how to implement AJAX in Rails applications, and</li>
+        <li>how to implement <a href="https://github.com/intridea/omniauth" target="_blank">OmniAuth</a> for logging in with Facebook.</li>
+      </ul>
+      <p>Sia teaches a code immersion bootcamp in New Orleans for <a href="http://techtalentsouth.com/" target="_blank">Tech Talent South</a>.  Tech Talent South's mission is to develop more tech talent in the South through immersive beginner-focused programs teaching web development and computer programming.  You too can learn how to build this app!</p>
+      <p>To learn more about Sia's coding journey, check out her <a href="http://siakaramalegos.github.io/" target="_blank">portfolio</a>, read her <a href="http://siakaramalegos.github.io/blog/index.html" target="_blank">blog</a>, or follow her on social media (below).  Sia also leads <a href="http://www.clioandcalliope.com/" target="_blank">Clio + Calliope</a>, a web development studio in New Orleans, LA.</p>
+      <ul class="list-inline">
+        <li><a href="https://github.com/siakaramalegos" target="_blank"><%= fa_icon 'github 2x' %></a></li>
+        <li><a href="https://twitter.com/thegreengreek" target="_blank"><%= fa_icon 'twitter 2x' %></a></li>
+        <li><a href="https://www.linkedin.com/in/karamalegos" target="_blank"><%= fa_icon 'linkedin 2x' %></a></li>
+      </ul>
+    </div>
+  </div>
 </div>
