@@ -43,12 +43,20 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
-          <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+          <li>
+            <%= link_to signout_path, id: "sign_out" do %>
+              <%= fa_icon "sign-out" %> Sign out
+            <% end %>
+          </li>
           <li>
             <%= image_tag current_user.small_image, class: "user-thumb" %>
           </li>
         <% else %>
-          <li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></li>
+          <li>
+            <%= link_to "/auth/facebook", id: "sign_in" do %>
+              <%= fa_icon "sign-in" %> Sign in with Facebook
+            <% end %>
+          </li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
