@@ -3,4 +3,6 @@
 
 I created this app as a learning project for Tech Talent South's code immersion bootcamp.  It is a Rails app that allows a user to manage their tasks, and the views are generated using JavaScript.
 
+You can see a live version of the app on Heroku [here](https://taskittome.herokuapp.com/).
+
 Learn more about my journey as a developer [here](http://siakaramalegos.github.io/).
